@@ -1,8 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-
-
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 
 const SearchBar = () => {
@@ -15,7 +14,7 @@ const SearchBar = () => {
         <div className="relative flex-1">
           <input type="text" placeholder="Search In Daraz" className="w-full font-poppins h-12 text-sm border-2 border-gray-300 rounded-md pl-3 text-[#121212] bg-white focus:outline-none focus:border-blue-500"/>
         </div>
-        <FontAwesomeIcon icon={faCartShopping} className="text-gray-500 text-xl" />
+        <ShoppingCartOutlinedIcon />
       </div>
     </section>
 
