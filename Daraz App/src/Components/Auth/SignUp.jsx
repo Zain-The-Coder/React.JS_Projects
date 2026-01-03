@@ -2,36 +2,52 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import Button from '@mui/material/Button';
 import { faGoogle, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ClearIcon from "@mui/icons-material/Clear";
+
 
 
 
 function SignUp () {
     return (
         <>
-        <section className="absolute top-[100px] left-[450px] px-[40px] pb-[40px] bg-white rounded-[10px] z-40">
-        <h2 className='text-center pt-[10px] font-[poppins]'>Sign up</h2>
-        <div className='flex gap-[10px]'>
-            <div className='p-[12px] border border-yellow text-[#121212] bg-white focus:outline-none focus:border-blue-500'><sub>pk</sub>+92</div>
-            <input className="w-full font-[poppins] h-12 text-[12px] border-2 border-gray-300 rounded-md pl-3 text-[#121212] bg-white focus:outline-none focus:border-blue-500" type="number" name="number" placeholder="Please Enter Your Phone Number" />
-        </div>
-        <div className='flex mt-[10px] gap-[6px] items-center font-[poppins] text--[14px]'>
-            <input className='h-[20px] w-[20px]' type="checkbox" />
-            <p>By creating and/or using your account, you agree to our <span>Terms of Use</span> and <span>Privacy Policy.</span></p>
-        </div>
-        <Button sx={{backgroundColor: '#f85606', color: '#fff',fontSize: '16px',padding: '10px', width:'100%' ,fontFamily:'poppins' ,
-        borderRadius: '8px',  '&:hover': {backgroundColor: '#d94a05',},}}
-        variant="contained" disableElevation><span><WhatsAppIcon /></span><span>Send Code Via Whatsapp</span></Button>
-        <p>Already Have An Account ? <span>Log In Now</span></p>
-                    <p className="text-center text-[#9a9fad] font-[poppins] text-[14px]">Or , Sign Up With</p>
-                    <div className="flex justify-center gap-[10px] font-[poppins] text-[#9a9fad] text-[14px] mt-[20px]">
-                    <button className="cursor-pointer">
-                        <FontAwesomeIcon icon={faGoogle} className="text-red-500 text-xl" />Google
-                    </button>
-                    <button className="cursor-pointer">
-                        <FontAwesomeIcon icon={faFacebook} className="text-blue-600 text-xl ml-3" />Facebook
-                    </button>
-                    </div>
-    </section>
+        <section className="absolute top-[80px] left-1/2 -translate-x-1/2 w-[95%] sm:w-[80%] md:w-[60%] lg:w-[40%] xl:w-[35%] pb-[40px] bg-white rounded-[10px] z-40">
+        <ClearIcon sx={{position: "absolute", top: "15px",right: "15px",cursor: "pointer",}}/>
+        <h2 className="text-center pt-[20px] pb-[40px] font-[poppins]">Sign up</h2>
+
+  <div className="px-[20px]">
+    <div className="flex flex-col sm:flex-row gap-[10px]">
+      <div className="p-[12px] border rounded-md border-[#9095a5] text-[#121212] bg-white"><sub>pk</sub>+92
+      </div>
+      <input className="w-full font-[poppins] h-12 text-[12px] border-2 border-[#e6e7eb] rounded-md pl-3 text-[#a5a9b6] bg-white focus:outline-none focus:border-blue-500" type="number" placeholder="Please Enter Your Phone Number"/>
+    </div>
+
+    <div className="flex items-start gap-[6px] font-[poppins] text-[13px] mt-[15px] mb-[20px]">
+      <input className="mt-[3px]" type="checkbox" />
+      <p className="text-[#a5a9b6]">By creating and/or using your account, you agree to our<span className="text-blue-500"> Terms of Use </span>and<span className="text-blue-500"> Privacy Policy</span>.</p>
+    </div>
+
+    <Button variant="contained" disableElevation sx={{backgroundColor: "#f85606",color: "#fff",width: "100%",
+        fontFamily: "poppins", borderRadius: "8px", fontSize: { xs: "14px", sm: "16px" },padding: "10px",
+        display: "flex",justifyContent: "center",gap: { xs: "10px", sm: "40px" },
+        "&:hover": { backgroundColor: "#d94a05" },}}>
+      <WhatsAppIcon />
+      Send Code Via Whatsapp </Button>
+
+    <p className="text-[#9095a5] font-[poppins] text-[13px] text-center py-[10px]">Already Have An Account ?<span className="text-blue-500"> Log In Now</span></p>
+
+    <p className="text-center text-[#9a9fad] font-[poppins] text-[14px] mt-[50px]">Or, Sign Up With</p>
+
+    <div className="flex flex-col sm:flex-row justify-center gap-[15px] font-[poppins] text-[#9a9fad] text-[14px] mt-[20px]">
+      <button className="flex items-center justify-center gap-2 cursor-pointer">
+        <FontAwesomeIcon icon={faGoogle} className="text-red-500 text-xl" />Google</button>
+
+      <button className="flex items-center justify-center gap-2 cursor-pointer">
+        <FontAwesomeIcon icon={faFacebook} className="text-blue-600 text-xl" />Facebook</button>
+    </div>
+
+  </div>
+</section>
+
         </>
     )
 }

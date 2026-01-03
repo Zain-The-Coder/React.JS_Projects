@@ -1,5 +1,5 @@
 // import Login from "../Auth/Login";
-import SignUp from "../Auth/SignUp";
+// import SignUp from "../Auth/SignUp";
 
 
 const NavBar = () => {
@@ -7,16 +7,16 @@ const NavBar = () => {
         <>
         <nav>
             <ul className="flex gap-[30px] text-[12px] w-[80%] justify-end m-auto text-white font-[600]">
-                <li>SAVE MORE ON APP</li>
-                <li>SELL ON DARAZ</li>
-                <li>HELP & SUPPORT</li>
-                <li>LOGIN</li>
-                <li>SIGN UP</li>
-                <li>CHANGE LANGUAGE</li>
+                <li className="cursor-pointer">SAVE MORE ON APP</li>
+                <li className="cursor-pointer">SELL ON DARAZ</li>
+                <li className="cursor-pointer">HELP & SUPPORT</li>
+                <li className="cursor-pointer">LOGIN</li>
+                <li className="cursor-pointer">SIGN UP</li>
+                <li className="cursor-pointer">زبان تبدیل کریں</li>
             </ul>
         </nav>
-        {/* <Login /> */}
-        <SignUp />
+        {/* <Login />
+        <SignUp /> */}
         </>
     )
 }
