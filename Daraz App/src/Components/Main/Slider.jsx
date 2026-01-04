@@ -17,7 +17,8 @@ function Slider () {
         const myInterval = setInterval(() => {
             setIndex(curruntIndex => (curruntIndex + 1) % images.length);
         }, 2000);
-    } , [])
+        return () => clearInterval(myInterval);
+    } , [images.length])
     return (
         <>
         <img className="h-[350px] w-[80%]" src={images[index]} alt="slider-image" />
