@@ -18,8 +18,8 @@ export function Professional () {
         <section>
           <Heading text="Education" />
             <Paragraph bold="Metriculation | Secondary Education" unbold="Metropolis Education System | 2023 - 2025  |  90.3%  |  A+ Grade" />
-            <Paragraph bold="Intermediate" unbold="Adamjee Govt Science College Karachi  | 2025 - Present" />
-            <Paragraph bold="MERN Stack Development" unbold="Saylani Mass IT Training  | 2025 - Present" />
+        <Paragraph bold="Intermediate" unbold="Adamjee Govt Science College Karachi  | 2025 - Present" />
+    <Paragraph bold="MERN Stack Development" unbold="Saylani Mass IT Training  | 2025 - Present" />
         </section>
         <section>
             <Heading text="Technical Skills" />
