@@ -4,7 +4,7 @@ import SearchBar from "./SearchBar";
 const Header = () => {
     return (
         <>
-        <section className="flex flex-col gap-[1px]">
+        <section className="flex flex-col md:gap-[1px]">
         <NavBar />
         <SearchBar />
         </section>

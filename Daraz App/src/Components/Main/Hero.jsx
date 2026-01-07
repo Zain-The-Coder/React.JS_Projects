@@ -6,10 +6,12 @@ import Slider from "./Slider";
 const Hero = () => {
     return (
         <>
-        <section className="flex w-[90%] justify-center m-auto">
-        <Slider />
-        <AsideBox />
-        </section>
+<section className="flex w-[90%] justify-center m-auto flex-col lg:flex-row">
+    <Slider />
+    <AsideBox />
+</section>
+
+
         <section>
             <img className="mt-[30px] m-auto" src={LiveImg} alt="live-image" />
         </section>

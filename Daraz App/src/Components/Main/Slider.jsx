@@ -31,8 +31,8 @@ function Slider() {
   };
 
   return (
-<div className="relative w-[83%] mx-auto overflow-hidden
-                h-[200px] sm:h-[300px] md:h-[350px]">
+  <div className=" relative overflow-hidden w-full lg:w-[83%] h-[200px] sm:h-[300px] md:h-[350px] mx-auto">
+
 
       <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${index * 100}%)` }}>
         {images.map((img, i) => (
@@ -40,11 +40,11 @@ function Slider() {
         ))}
       </div>
 
-      <button onClick={prevSlide} className="absolute cursor-pointer top-1/2 left-3 -translate-y-1/2 bg-black/40 hover:bg-black/60 p-2 rounded-full text-white">
+      <button onClick={prevSlide} className="absolute cursor-pointer sm:top-[100px] md:top-1/2 left-3 -translate-y-1/2 bg-black/40 hover:bg-black/60 p-2 rounded-full text-white">
         <ChevronLeftIcon fontSize="large" />
       </button>
 
-      <button onClick={nextSlide} className="absolute cursor-pointer top-1/2 right-3 -translate-y-1/2 bg-black/40 hover:bg-black/60 p-2 rounded-full text-white">
+      <button onClick={nextSlide} className="absolute cursor-pointer sm:top-[100px] md:top-1/2 right-3 -translate-y-1/2 bg-black/40 hover:bg-black/60 p-2 rounded-full text-white">
         <ChevronRightIcon fontSize="large" />
       </button>
     </div>

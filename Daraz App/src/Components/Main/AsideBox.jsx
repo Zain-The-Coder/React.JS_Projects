@@ -9,7 +9,7 @@ import { faGooglePlay, faApple } from "@fortawesome/free-brands-svg-icons";
 const AsideBox = () => {
     return (
         <>
-        <aside className="bg-gradient-to-r w-[17%] from-white to-[#ffeadd] rounded-r-xl">
+<aside className="hidden lg:block bg-gradient-to-r w-[17%] from-white to-[#ffeadd] rounded-r-xl">
             <header className="flex justify-items-start gap-[40px] items-center pl-[2px] pr-[10px] pt-[4px]">
                 <img className="w-[27px] h-[45px] pl-[3px] pb-[4px]" src={Daraz_Logo} alt="daraz-logo" />
                 <h2 className="uppercase text-[14px] font-[poppins] text-[#682312]">Try Daraz App</h2>
