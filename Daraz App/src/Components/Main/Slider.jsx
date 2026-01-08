@@ -40,11 +40,11 @@ function Slider() {
         ))}
       </div>
 
-      <button onClick={prevSlide} className="absolute cursor-pointer sm:top-[100px] md:top-1/2 left-3 -translate-y-1/2 bg-black/40 hover:bg-black/60 p-2 rounded-full text-white">
+      <button onClick={prevSlide} className="absolute cursor-pointer sm:top-[100px] left-3 -translate-y-1/2 bg-black/40 hover:bg-black/60 p-2 rounded-full text-white">
         <ChevronLeftIcon fontSize="large" />
       </button>
 
-      <button onClick={nextSlide} className="absolute cursor-pointer sm:top-[100px] md:top-1/2 right-3 -translate-y-1/2 bg-black/40 hover:bg-black/60 p-2 rounded-full text-white">
+      <button onClick={nextSlide} className="absolute cursor-pointer sm:top-[100px] right-3 -translate-y-1/2 bg-black/40 hover:bg-black/60 p-2 rounded-full text-white">
         <ChevronRightIcon fontSize="large" />
       </button>
     </div>

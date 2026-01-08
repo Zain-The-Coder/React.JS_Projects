@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import Login from "../Auth/Login";
+import Login from "../Auth/Login";
 // import SignUp from "../Auth/SignUp";
 
 const NavBar = () => {
@@ -33,6 +33,7 @@ const NavBar = () => {
                     </ul>
                 )}
             </nav>
+            <div>{Login}</div>
         </>
     );
 };

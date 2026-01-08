@@ -27,7 +27,7 @@ function Products() {
   return (
     <>
     <div className="bg-gray-100 min-h-screen font-[poppins]">
-    <h1 className="text-[#424242] text-[25px] ml-[3%] mb-[-20px] mt-[30px]">Our Products</h1>
+    <h1 className="text-[#424242] text-[25px] ml-[3%] mb-[-20px] sm:mt-[30px] sm:mb-[10px]">Our Products</h1>
       <div className="max-w-7xl mx-auto p-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
       
 

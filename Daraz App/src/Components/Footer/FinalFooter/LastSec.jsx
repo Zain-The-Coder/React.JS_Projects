@@ -13,29 +13,33 @@ import LastImage from "./LastImage";
 function LastPart () {
     return (
         <>
-        <section className="font-[poppins] bg-white px-[70px] py-[37px]">
-            <section className="flex">
+        <section className="font-[poppins] bg-white px-[70px] py-[37px] flex justify-between">
+            <section className="flex w-[70%] justify-between">
                 <div>
                     <h3 className="font-light">Daraz International</h3>
                     <ul  className="flex text-[13px] text-[#9688a5] gap-[15px]">
-                        <li className="flex items-center gap-[7px]"><LastImage src={PakistanFlag} alt="pakistan-image" /><span>Pakistan</span></li>
-                        <li className="flex items-center gap-[7px]"><LastImage src={BangladeshFlag} alt="pakistan-image" /><span>Bangladesh</span></li>
-                        <li className="flex items-center gap-[7px]"><LastImage src={SrilankaFlag} alt="pakistan-image" /><span>Srilanka</span></li>
-                        <li className="flex items-center gap-[7px]"><LastImage src={MaymaarFlag} alt="pakistan-image" /><span>Myanmar</span></li>
-                        <li className="flex items-center gap-[7px]"><LastImage src={NepalFlag} alt="pakistan-image" /><span>Nepal</span></li>
+                        <li className="flex items-center gap-[7px] cursor-pointer"><LastImage src={PakistanFlag} alt="pakistan-image" /><span>Pakistan</span></li>
+                        <li className="flex items-center gap-[7px] cursor-pointer"><LastImage src={BangladeshFlag} alt="pakistan-image" /><span>Bangladesh</span></li>
+                        <li className="flex items-center gap-[7px] cursor-pointer"><LastImage src={SrilankaFlag} alt="pakistan-image" /><span>Srilanka</span></li>
+                        <li className="flex items-center gap-[7px] cursor-pointer"><LastImage src={MaymaarFlag} alt="pakistan-image" /><span>Myanmar</span></li>
+                        <li className="flex items-center gap-[7px] cursor-pointer"><LastImage src={NepalFlag} alt="pakistan-image" /><span>Nepal</span></li>
                     </ul>
                 </div>
                 <div>
-                    <h3>Follow Us</h3>
+                    <h3 className="font-light pb-[3%]">Follow Us</h3>
                     <ul className="flex gap-[20px]">
-                        <li><FacebookIcon /></li>
-                        <li><XIcon /></li>
-                        <li><InstagramIcon /></li>
-                        <li><YouTubeIcon /></li>
+                        <li className="cursor-pointer"><FacebookIcon /></li>
+                        <li className="cursor-pointer"><XIcon /></li>
+                        <li className="cursor-pointer"><InstagramIcon /></li>
+                        <li className="cursor-pointer"><YouTubeIcon /></li>
                     </ul>
                 </div>
             </section>
+            <section>
+                <p>© Daraz 2026</p>
+            </section>
         </section>
+        
         </>
     )
 }
