@@ -13,14 +13,12 @@ function FirstPart() {
   return (
     <>
       <section className="bg-white">
-        {/* Mobile: w-full aur flex-col | Desktop: w-[60%] aur flex-row */}
         <section className="flex flex-col md:flex-row font-[poppins] bg-white mt-[3%] w-[95%] md:w-[60%] justify-around p-[20px] items-center mx-auto md:ml-[5%] gap-8 md:gap-0">
           
-          {/* Payment Methods Section */}
           <div className="flex flex-col items-center md:items-start">
             <h3 className="mb-[10px] font-semibold text-[#606060]">Payment Methods</h3>
             <div className="flex flex-col gap-[10px]">
-              {/* flex-wrap lagaya taake icons mobile pe screen se bahar na jayein */}
+
               <div className="flex flex-wrap justify-center md:justify-start gap-[5px]">
                 <Image src={EasyPaisa} />
                 <Image src={Myboad} />
@@ -36,7 +34,6 @@ function FirstPart() {
             </div>
           </div>
 
-          {/* Verified By Section */}
           <div className="flex flex-col items-center md:items-start">
             <h3 className="mb-[10px] md:mb-[20px] font-semibold text-[#606060]">Verified By</h3>
             <div className="flex justify-center md:justify-start">
