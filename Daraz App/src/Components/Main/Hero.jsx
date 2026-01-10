@@ -11,7 +11,6 @@ const Hero = () => {
     <AsideBox />
 </section>
 
-
         <section>
             <img className="sm:mt-[-40px] md:mt-[-36px] lg:mt-[30px] m-auto sm:w-[80%]" src={LiveImg} alt="live-image" />
         </section>

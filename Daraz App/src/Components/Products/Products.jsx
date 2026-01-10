@@ -1,23 +1,20 @@
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Loader from "./Loader";
 
 function Products() {
   const [products, setProducts] = useState([]);
-  const [error , setError] = useState("");
-  const [show , setShow] = useState(true);
-  const [loading , setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function dataFetcher() {
       try {
         const res = await fetch("https://fakestoreapi.com/products");
         const data = await res.json();
-        setShow(false);
         setProducts(data);
-        setLoading(false)
+        setLoading(false);
       } catch (e) {
-        console.log(e);
-        setLoading(false)
+        setLoading(false);
         setError(e.message);
       }
     }
@@ -25,42 +22,43 @@ function Products() {
   }, []);
 
   return (
-    <>
-    <div className="bg-gray-100 min-h-screen font-[poppins]">
-    <h1 className="text-[#424242] text-[25px] ml-[3%] mb-[-20px] sm:mt-[30px] sm:mb-[10px]">Our Products</h1>
-      <div className="max-w-7xl mx-auto p-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-      
+    <div className="bg-gray-100 min-h-screen font-[poppins] pb-10">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6">
+        <h1 className="text-[#424242] text-xl sm:text-2xl font-bold py-5 sm:py-8">Our Products</h1>
 
-      {show && <p className="text-red-600 font-extrabold text-[20px] text-center">{error}</p> }
-      {loading && <Loader />}
-        {products.map((product) => {
-          const stars = Math.round(product.rating.rate);
+        {error && <p className="text-red-600 font-bold text-center py-10">{error}</p>}
+        {loading && <Loader />}
 
-          return (
-            <div key={product.id} className="bg-white rounded-md shadow hover:shadow-lg transition cursor-pointer">
-              <div className="h-[160px] flex items-center justify-center p-3">
-                <img src={product.image} alt={product.title} className="h-full object-contain"/>
-              </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 sm:gap-4">
+          {products.map((product) => {
+            const stars = Math.round(product.rating.rate);
 
-              <div className="px-3 pb-3 space-y-1">
-                
-                <p className="text-xs text-gray-700 line-clamp-2">{product.title}</p>
-
-                <p className="text-orange-600 font-bold text-sm">Rs. {Math.round(product.price * 280)}</p>
-
-                <div className="flex items-center text-xs gap-1">
-                  {[1, 2, 3, 4, 5].map((num) => (
-                    <span key={num} className={num <= stars ? "text-yellow-400" : "text-gray-300"}>★</span>))}
-                  <span className="text-gray-500 ml-1">({product.rating.count})</span>
+            return (
+              <div key={product.id} className="bg-white rounded-md shadow-sm hover:shadow-md transition flex flex-col overflow-hidden">
+                <div className="h-32 sm:h-40 md:h-48 flex items-center justify-center p-2 sm:p-4">
+                  <img src={product.image} alt={product.title} className="h-full w-full object-contain"/>
                 </div>
-              </div>
-            </div>
-          );
-        })}
 
+                <div className="p-2 sm:p-3 flex flex-col flex-grow">
+
+                  <p className="text-[11px] sm:text-xs text-gray-700 line-clamp-2 leading-tight h-7 sm:h-8">{product.title}</p>
+
+                  <p className="text-orange-600 font-bold text-sm sm:text-base mt-1 sm:mt-2">Rs. {Math.round(product.price * 280).toLocaleString()}</p>
+                  
+                  <div className="flex items-center text-[10px] sm:text-xs mt-auto pt-2">
+                    <div className="flex text-yellow-400">
+                      {[1, 2, 3, 4, 5].map((num) => (
+                        <span key={num} className={num <= stars ? "" : "text-gray-200"}>★</span>
+                      ))}
+                    </div>
+                    <span className="text-gray-400 ml-1 hidden xs:inline">({product.rating.count})</span>
+                  </div>
+                </div>
+              </div>);
+          })}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
