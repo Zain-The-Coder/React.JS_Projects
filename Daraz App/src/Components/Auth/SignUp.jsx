@@ -3,14 +3,24 @@ import Button from '@mui/material/Button';
 import { faGoogle, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ClearIcon from "@mui/icons-material/Clear";
-
+import { useState } from 'react';
+import Login from './Login';
 
 
 
 function SignUp () {
+
+  const [showLogin , setShowLogin] = useState(false) ;
+  const [showSignup , setShowSignup] = useState(false);
+
+  function funcshowLogin () {
+    setShowLogin(true);
+    setShowSignup(false)
+  }
     return (
         <>
-        <section className="absolute top-[80px] left-1/2 -translate-x-1/2 w-[95%] sm:w-[80%] md:w-[60%] lg:w-[40%] xl:w-[35%] pb-[40px] bg-white rounded-[10px] z-40">
+        {}
+        <section className="absolute top-[120px] left-1/2 -translate-x-1/2 w-[95%] sm:w-[80%] md:w-[60%] lg:w-[40%] xl:w-[35%] pb-[40px] bg-white rounded-[10px] z-40">
         <ClearIcon sx={{position: "absolute", top: "15px",right: "15px",cursor: "pointer",}}/>
         <h2 className="text-center pt-[20px] pb-[40px] font-[poppins]">Sign up</h2>
 
@@ -30,10 +40,9 @@ function SignUp () {
         fontFamily: "poppins", borderRadius: "8px", fontSize: { xs: "14px", sm: "16px" },padding: "10px",
         display: "flex",justifyContent: "center",gap: { xs: "10px", sm: "40px" },
         "&:hover": { backgroundColor: "#d94a05" },}}>
-      <WhatsAppIcon />
-      Send Code Via Whatsapp </Button>
+      <WhatsAppIcon /> Send Code Via Whatsapp </Button>
 
-    <p className="text-[#9095a5] font-[poppins] text-[13px] text-center py-[10px]">Already Have An Account ?<span className="text-blue-500"> Log In Now</span></p>
+    <p className="text-[#9095a5] font-[poppins] text-[13px] text-center py-[10px]">Already Have An Account ?<span onClick={() => {funcshowLogin()}} className="text-blue-500 cursor-pointer"> Log In Now</span></p>
 
     <p className="text-center text-[#9a9fad] font-[poppins] text-[14px] mt-[50px]">Or, Sign Up With</p>
 
@@ -47,6 +56,10 @@ function SignUp () {
 
   </div>
 </section>
+
+        {showLogin && (
+          <Login />
+        )}
 
         </>
     )

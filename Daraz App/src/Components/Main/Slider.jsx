@@ -39,12 +39,11 @@ function Slider() {
         ))}
       </div>
 
-      {/* Sirf hidden sm:block add kiya hai arrows hide karne ke liye */}
-      <button onClick={prevSlide} className="hidden sm:block absolute cursor-pointer sm:top-[100px] left-3 -translate-y-1/2 bg-black/40 hover:bg-black/60 p-2 rounded-full text-white">
+      <button onClick={prevSlide} className="hidden sm:block absolute cursor-pointer sm:top-[170px] left-3 -translate-y-1/2 bg-black/40 hover:bg-black/60 p-2 rounded-full text-white">
         <ChevronLeftIcon fontSize="large" />
       </button>
 
-      <button onClick={nextSlide} className="hidden sm:block absolute cursor-pointer sm:top-[100px] right-3 -translate-y-1/2 bg-black/40 hover:bg-black/60 p-2 rounded-full text-white">
+      <button onClick={nextSlide} className="hidden sm:block absolute cursor-pointer sm:top-[170px] right-3 -translate-y-1/2 bg-black/40 hover:bg-black/60 p-2 rounded-full text-white">
         <ChevronRightIcon fontSize="large" />
       </button>
     </div>

@@ -1,20 +1,28 @@
 import { useState } from "react";
 import Login from "../Auth/Login";
+import SignUp from "../Auth/SignUp";
 // import SignUp from "../Auth/SignUp";
 
 const NavBar = () => {
     const [open, setOpen] = useState(false);
+    const [showLogin , setShowLogin] = useState(false);
+    const [showSignup , setShowSignup] = useState(false);
+
+    function signUpBar () {
+        setShowLogin(false);
+        setShowSignup(true);
+    }
 
     return (
         <>
             <nav className="bg-[#f85606] text-white">
-                {/* Desktop Menu */}
+
                 <ul className="hidden md:flex gap-[30px] text-[12px] w-[80%] justify-end m-auto font-[600] py-2">
                     <li className="cursor-pointer">SAVE MORE ON APP</li>
                     <li className="cursor-pointer">SELL ON DARAZ</li>
                     <li className="cursor-pointer">HELP & SUPPORT</li>
-                    <li className="cursor-pointer">LOGIN</li>
-                    <li className="cursor-pointer">SIGN UP</li>
+                    <li onClick={() => {setShowLogin(true)}} className="cursor-pointer">LOGIN</li>
+                    <li onClick={() => {signUpBar()}} className="cursor-pointer">SIGN UP</li>
                     <li className="cursor-pointer">زبان تبدیل کریں</li>
                 </ul>
 
@@ -27,13 +35,18 @@ const NavBar = () => {
                         <li>SAVE MORE ON APP</li>
                         <li>SELL ON DARAZ</li>
                         <li>HELP & SUPPORT</li>
-                        <li>LOGIN</li>
-                        <li>SIGN UP</li>
+                        <li onClick={() => {setShowLogin(true)}}>LOGIN</li>
+                        <li onClick={() => {setShowSignup(true)}}>SIGN UP</li>
                         <li>زبان تبدیل کریں</li>
                     </ul>
                 )}
+                {showLogin && (
+                    <Login />
+                )}
+                {showSignup && (
+                    <SignUp />
+                )}
             </nav>
-            <div>{Login}</div>
         </>
     );
 };
