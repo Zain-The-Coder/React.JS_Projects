@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Login from "../Auth/Login";
 import SignUp from "../Auth/SignUp";
-// import SignUp from "../Auth/SignUp";
 
 const NavBar = () => {
     const [open, setOpen] = useState(false);
@@ -13,10 +12,14 @@ const NavBar = () => {
         setShowSignup(true);
     }
 
+    function closeModal() {
+        setShowLogin(false);
+        setShowSignup(false);
+    }
+
     return (
         <>
             <nav className="bg-[#f85606] text-white">
-
                 <ul className="hidden md:flex gap-[30px] text-[12px] w-[80%] justify-end m-auto font-[600] py-2">
                     <li className="cursor-pointer">SAVE MORE ON APP</li>
                     <li className="cursor-pointer">SELL ON DARAZ</li>
@@ -40,15 +43,13 @@ const NavBar = () => {
                         <li>زبان تبدیل کریں</li>
                     </ul>
                 )}
-                {showLogin && (
-                    <Login />
-                )}
-                {showSignup && (
-                    <SignUp />
-                )}
+
+                {showLogin && <Login onClose={closeModal} setShowLogin={setShowLogin} setShowSignup={setShowSignup} />}
+                {showSignup && <SignUp onClose={closeModal} setShowLogin={setShowLogin} setShowSignup={setShowSignup} />}
             </nav>
         </>
     );
 };
 
 export default NavBar;
+
