@@ -1,5 +1,3 @@
-import PlayGround from "./Components/PlayGround"
-import StudentCard from "./Components/StudentCard"
 import FinalTouch from "./FinalTouch"
 
 
@@ -12,7 +10,6 @@ function App() {
       <h2 className="text-[22px] font-extrabold cursor-pointer">Visit My Code</h2>
     </header>
     <FinalTouch />
-      
     </>
   )
 }

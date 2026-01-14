@@ -9,7 +9,6 @@ function Form () {
 
     const handleSubmit = (e) => {
       e.preventDefault();
-      console.log("Hello World")
       if(!userName || !userEmail || !userPassword) {
         setError("All Fields Are Mandatory !");
         return ;
