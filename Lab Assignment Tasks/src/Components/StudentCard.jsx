@@ -1,41 +1,21 @@
 import PlayGround from "./PlayGround";
 
-function StudentCard () {
-    const dataBase = [
-{
-name: "Ali",
-roll: "101",
-batch: "Web & App",
-favLang: "JavaScript",
-},
-{
-name: "Zain",
-roll: "102",
-batch: "Web & App",
-favLang: "Python",
-},
-{
-name: "Sara",
-roll: "103",
-batch: "AI",
-favLang: "Java",
-},
-{
-name: "Ahmed",
-roll: "108",
-batch: "Cyber Security",
-favLang: "MongoDB",
-},
-];
-    return (
-        <>
-        <section className="flex-col md:flex-row justify-around items-center">
-        {dataBase.map((items , index) => (
-            <PlayGround key={index} name={items.name} rollNo={items.roll} batch={items.batch} 
-            favLang={items.favLang}/>
-        ))}
-        </section>
-        </>
-    )
+function StudentCard() {
+  const dataBase = [
+    { name: "Ali", roll: "101", batch: "Web & App", favLang: "JavaScript" },
+    { name: "Zain", roll: "102", batch: "Web & App", favLang: "Python" },
+    { name: "Sara", roll: "103", batch: "AI", favLang: "Java" },
+    { name: "Ahmed", roll: "108", batch: "Cyber Security", favLang: "MongoDB" },
+  ];
+
+  return (
+    <section className="flex flex-col md:flex-row flex-wrap justify-center gap-6">
+      {dataBase.map((items, index) => (
+        <PlayGround key={index}
+          name={items.name} rollNo={items.roll} batch={items.batch} favLang={items.favLang}/>
+      ))}
+    </section>
+  );
 }
-export default StudentCard ;
+
+export default StudentCard;

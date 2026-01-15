@@ -1,23 +1,19 @@
-function ProductCard ({ title, price, image, stockStatus }) {
-    const isOutOfStock = stockStatus === 0 || stockStatus === "Out of Stock";
+function ProductCard({ title, price, image, stockStatus }) {
+  const isOutOfStock = stockStatus === 0 || stockStatus === "Out of Stock";
+
   return (
-    <>
-    <div style={{border: '1px solid #e2e8f0',borderRadius: '12px',padding: '15px',width: '250px',
-      backgroundColor: 'white',boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',textAlign: 'center'}}>
-      <img  src={image}  alt={title}  style={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: '8px' }} />
-      
-      <h3 style={{ margin: '15px 0 5px 0', fontSize: '1.2rem', color: '#1e293b' }}>{title}</h3>
-      <p style={{ fontWeight: 'bold', color: '#3b82f6', fontSize: '1.1rem' }}>${price}</p>
-
-      <p style={{ fontSize: '0.85rem', color: isOutOfStock ? '#ef4444' : '#10b981',fontWeight: '600'}}>
-        {isOutOfStock ? 'Out of Stock !' : `Stock: ${stockStatus}`}</p>
-
-      <button disabled={isOutOfStock} style={{  marginTop: '10px', width: '100%', padding: '10px', borderRadius: '6px',
-          border: 'none',backgroundColor: isOutOfStock ? '#cbd5e1' : '#3b82f6',color: 'white',cursor: isOutOfStock ? 'not-allowed' : 'pointer',fontWeight: 'bold'}}>
-        {isOutOfStock ? 'Sold Out' : 'Buy Now'}</button>
+    <div className="bg-white shadow-md rounded-lg p-4 w-full max-w-xs mx-auto sm:mx-0">
+      <img src={image} alt={title} className="w-full h-48 object-cover rounded-lg"/>
+      <h3 className="mt-3 text-lg font-semibold text-gray-800">{title}</h3>
+      <p className="text-blue-600 font-bold text-lg">${price}</p>
+      <p className={`mt-1 font-semibold ${ isOutOfStock ? "text-red-500" : "text-green-600"}`}>
+        {isOutOfStock ? "Out of Stock !" : `Stock: ${stockStatus}`}</p>
+      <button disabled={isOutOfStock} className={`mt-3 w-full py-2 rounded font-bold transition ${
+          isOutOfStock ? "bg-gray-300 cursor-not-allowed" : "bg-blue-500 text-white hover:bg-blue-600"}`}>
+        {isOutOfStock ? "Sold Out" : "Buy Now"}
+      </button>
     </div>
-  </>
   );
-};
+}
 
-export default ProductCard ;
+export default ProductCard;
