@@ -36,7 +36,7 @@ function FakeStore () {
         </h3>
 
         <p style={{ margin: 0, fontSize: "13px", color: "#6b7280", whiteSpace: "nowrap", overflow: "hidden",
-            textOverflow: "ellipsis" , maxWidth:"1000px"}}>{(items.description)}</p></div>
+            textOverflow: "ellipsis" , maxWidth:"200px"}}>{(items.description)}</p></div>
         <p style={{ margin: 0, fontSize: "13px", color: "#25D366", fontWeight: "500", whiteSpace: "nowrap" }}> ${items.price}</p>
     </div>
   ))}

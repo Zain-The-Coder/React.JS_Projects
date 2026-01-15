@@ -19,7 +19,7 @@ function Countergame () {
   }, [increase]);
     return (
         <>
-    <section className="flex flex-col items-center justify-center p-4">
+    <section className="flex border w-fit justify-center items-center flex-col p-4">
         <div className="flex flex-col items-center shadow-md rounded-xl p-6 mb-6 w-48">
             <span className="text-6xl mb-2">{emoji}</span>
             <p className="text-2xl font-semibold">{increase}</p>

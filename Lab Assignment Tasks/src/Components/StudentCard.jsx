@@ -29,7 +29,7 @@ favLang: "MongoDB",
 ];
     return (
         <>
-        <section className="flex justify-around items-center">
+        <section className="flex-col md:flex-row justify-around items-center">
         {dataBase.map((items , index) => (
             <PlayGround key={index} name={items.name} rollNo={items.roll} batch={items.batch} 
             favLang={items.favLang}/>

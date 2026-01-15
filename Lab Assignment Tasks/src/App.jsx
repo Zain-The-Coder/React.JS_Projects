@@ -1,6 +1,4 @@
-import FinalTouch from "./FinalTouch"
-
-
+import FinalTouch from "./FinalTouch";
 function App() {
 
   return (
@@ -10,8 +8,9 @@ function App() {
       <h2 className="text-[22px] font-extrabold cursor-pointer">Visit My Code</h2>
     </header>
     <FinalTouch />
+
     </>
   )
 }
 
-export default App
+export default App;
