@@ -18,11 +18,10 @@ function App () {
     setDes("");
   }
 
-  const deleteTask = () => {
-    let userTask = [...obj];
-    console.log();
-    console.log(userTask);
-  }
+  const deleteTask = (index) => {
+  setObj(obj.filter((_, i) => i !== index));
+  setObj(updatedTasks);
+  };
 
   return (
     <>
@@ -43,7 +42,7 @@ function App () {
       <h2 className='uppercase text-[22px] text-white'>Your Notes</h2>
       <section className='flex flex-wrap justify-start items-start'>
         {obj.map((item , index) => (
-          <Section key={index} object={item.title} description={item.des} func={deleteTask} />
+          <Section key={index} index={index} object={item.title} description={item.des} func={deleteTask} />
         ))}
       </section>
     </section>
