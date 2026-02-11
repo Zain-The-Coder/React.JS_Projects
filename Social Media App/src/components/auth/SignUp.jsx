@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import { auth } from '../../firebase';
-import { createUserWithEmailAndPassword } from "firebase/auth"; 
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const SignUp = () => {
+    const [user , setUser] = useState("");
     const [email , setEmail] = useState("");
     const [password , setPassword] = useState("");
     const [msg , setMsg] = useState("");
     const [error , setError] = useState("");
+    localStorage.setItem("userName" , user);
+    localStorage.setItem("userEmail" , email)
 
     function formHandler (e) {
         e.preventDefault();
@@ -15,6 +18,7 @@ const SignUp = () => {
             setError("");
             setMsg("User Created Successfully! ")
             setEmail("");
+            setUser("");
             setPassword("");
         })
         .catch((error) => {
@@ -31,7 +35,8 @@ const SignUp = () => {
         <form onSubmit={formHandler} className="space-y-6">
           <div>
             <label className="block text-sm font-medium text-gray-700">Full Name</label>
-            <input type="text" placeholder='Zain Ur Rehman (Creator Of App)'
+            <input value={user} onChange={(e) => {setUser(e.target.value)}} 
+            type="text" placeholder='Zain Ur Rehman (Creator Of App)'
               className="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"/>
           </div>
 
@@ -58,7 +63,7 @@ const SignUp = () => {
         </form>
 
         <p className="mt-6 text-center text-sm text-gray-600">
-          Already have an account? <span className="text-blue-600 hover:underline cursor-pointer">Log in</span>
+          Already Have An Account <a className="text-blue-600 hover:underline cursor-pointer">Log in</a>
         </p>
       </div>
     </div>

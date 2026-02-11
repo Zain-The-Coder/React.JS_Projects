@@ -1,15 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-import Auth from './components/auth/Auth'
+import Auth from './components/pages/Auth';
+import SignIn from './components/auth/SignIn';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './App.css';
+import Home from './components/pages/Home';
 
 function App() {
-
   return (
     <>
-    <Auth />
+    <Home />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
