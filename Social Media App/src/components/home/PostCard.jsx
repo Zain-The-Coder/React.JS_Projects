@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import PostUploader from './PostUploader';
+import AuraPostCreator from './AuraPostCreator';
 
-const PostCard = () => {
+const PostCard = ({doc}) => {
     const [userName , setuserName] = useState("");
     const [userEmail , setuserEmail] = useState("");
     useEffect(() => {
@@ -11,10 +12,7 @@ const PostCard = () => {
     } , [])
   return (
     <>
-    <p>{userName}</p>
-    <p>{userEmail}</p>
-    <PostUploader />
-
+    <AuraPostCreator />
     </>
   )
 }

@@ -1,9 +1,37 @@
 import React, { useState } from 'react';
-import { Image, Smile, Hash, Send, X, Paperclip, BarChart2 } from 'lucide-react';
+import { Image, Smile, Send} from 'lucide-react';
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "../../firebase";
+import DummyPost from './DummyPost';
+import PostCard from './PostCard';
+import PostCreator from './PostCreator';
 
 const AuraPostCreator = () => {
+  let curruntUserName = localStorage.getItem("userName");
+  let curruntUserEmail = localStorage.getItem("userEmail");
   const [content, setContent] = useState('');
   const [isFocused, setIsFocused] = useState(false);
+  const [posted , setPosted] = useState(false);
+  const [obj , setObj] = useState({});
+ 
+function addData() {
+  setDoc(doc(db, "posts", curruntUserName), {
+    name: curruntUserName ,
+    email : curruntUserEmail ,
+    text : content , 
+    like : 'liks'
+  })
+    .then(() => {
+      console.log("Document successfully written!");
+      setObj({userName : curruntUserName , userEmail : curruntUserEmail , userText : content})
+    })
+
+    .catch((error) => {
+      console.error("Error writing document: ", error);
+    });
+}
+
+
 
   return (
     <div className="max-w-[80%] mx-auto p-1">
@@ -14,18 +42,17 @@ const AuraPostCreator = () => {
           <div className="p-5">
             <div className="flex items-start space-x-4">
               <div className="relative">
-                <img 
-                  src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" 
-                  alt="avatar" 
-                  className="w-12 h-12 rounded-2xl object-cover bg-slate-100"
-                />
+                <div className="w-12 h-12 rounded-2xl text-center object-cover bg-slate-100 font-[poppins] text-[30px]">
+                  {curruntUserName.charAt(0)}
+
+                </div>
                 <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white rounded-full"></div>
               </div>
               
               <div className="flex-1">
                 <textarea onFocus={() => setIsFocused(true)} onBlur={() => setIsFocused(false)} value={content}
                   onChange={(e) => setContent(e.target.value)}
-                  className="w-full bg-transparent border-none focus:ring-0 text-gray-700 text-lg placeholder-gray-400 resize-none min-h-[100px]"
+                  className="w-full bg-transparent border-none focus:ring-0 text-white font-[poppins] text-[14px] p-[10px] text-lg placeholder-gray-400 resize-none min-h-[100px]"
                   placeholder="Kuch naya share karein..."/>
               </div>
             </div>
@@ -38,7 +65,7 @@ const AuraPostCreator = () => {
                 <PostTool icon={<Smile size={20} />} color="hover:bg-yellow-50  cursor-pointer hover:text-yellow-600" />
               </div>
 
-              <button 
+              <button onClick={addData}
                 disabled={!content.trim()}
                 className={`group flex items-center cursor-pointer space-x-2 px-6 py-2.5 rounded-2xl font-bold transition-all duration-300
                   ${!content.trim() 
@@ -51,6 +78,8 @@ const AuraPostCreator = () => {
           </div>
         </div>
       </div>
+      <PostCreator data={obj} 
+       />
     </div>
   );
 };
