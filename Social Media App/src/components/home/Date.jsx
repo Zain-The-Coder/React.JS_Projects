@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
 const DateTaker = () => {
-  // Initialize state with the current date/time
   const [dateTime, setDateTime] = useState(new Date());
 
   useEffect(() => {
-    // Set up an interval to update the state every second
     const timer = setInterval(() => {
       setDateTime(new Date());
     }, 1000);
 
-    // Clean up the interval when the component unmounts
     return () => clearInterval(timer);
   }, []);
 
